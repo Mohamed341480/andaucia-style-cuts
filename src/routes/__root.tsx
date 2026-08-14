@@ -8,7 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
-import { Phone, MapPin, Clock, Menu, X } from "lucide-react";
+import { Phone, MapPin, Clock, Menu, X, MessageCircle } from "lucide-react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -150,15 +150,24 @@ function Header() {
 
         <div className="hidden items-center gap-3 md:flex">
           <a
+            href="https://wa.me/31624311013?text=Hallo%2C%20ik%20wil%20graag%20een%20afspraak%20maken%20bij%20Kapsalon%20Andalucia"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-foreground hover:text-green-600"
+            aria-label="WhatsApp"
+          >
+            WhatsApp
+          </a>
+          <a
             href="tel:0624311013"
             className="text-sm font-medium text-foreground hover:text-terracotta"
           >
             06 24311013
           </a>
-          <Button asChild size="sm" className="rounded-full bg-terracotta text-primary-foreground hover:bg-terracotta-dark">
-            <a href="tel:0624311013">
-              <Phone className="mr-1.5 h-4 w-4" />
-              Bel nu
+          <Button asChild size="sm" className="rounded-full bg-green-500 text-white hover:bg-green-600">
+            <a href="https://wa.me/31624311013?text=Hallo%2C%20ik%20wil%20graag%20een%20afspraak%20maken%20bij%20Kapsalon%20Andalucia" target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="mr-1.5 h-4 w-4" />
+              App ons
             </a>
           </Button>
         </div>
@@ -188,6 +197,15 @@ function Header() {
             ))}
           </nav>
           <div className="mt-4 flex flex-col gap-3 border-t border-border pt-4">
+            <a
+              href="https://wa.me/31624311013?text=Hallo%2C%20ik%20wil%20graag%20een%20afspraak%20maken%20bij%20Kapsalon%20Andalucia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-green-600"
+            >
+              <MessageCircle className="h-4 w-4" />
+              WhatsApp afspraak
+            </a>
             <a
               href="tel:0624311013"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-terracotta px-4 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-terracotta-dark"
