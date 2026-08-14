@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Scissors, ArrowRight, Phone } from "lucide-react";
+import { Scissors, ArrowRight, Phone, MessageCircle } from "lucide-react";
 import { Button } from "../components/ui/button";
 
 export const Route = createFileRoute("/diensten")({
@@ -20,32 +20,17 @@ const services = [
   {
     title: "Heren knippen",
     description: "Wassen, knippen en stylen. Klassiek of modern, afgestemd op jouw haartype en wensen.",
-    price: "€18,50",
-  },
-  {
-    title: "Tondeuse alleen",
-    description: "Snelle en strakke verzorging met de tondeuse. Perfect voor een kort, onderhoudsvriendelijk kapsel.",
-    price: "€15,00",
-  },
-  {
-    title: "Baard trimmen",
-    description: "Contouren, trimmen en verzorgen. Inclusief aandacht voor lijnen en symmetrie.",
-    price: "€12,50",
-  },
-  {
-    title: "Knippen + baard",
-    description: "Het complete pakket: haar en baard in één beurt. Voor een verzorgde, frisse look.",
-    price: "€27,50",
+    price: "€20",
   },
   {
     title: "Kinderen (tot 12 jaar)",
     description: "Geduldig knippen voor de jonge klanten. Een frisse look voor een scherpe prijs.",
-    price: "€15,00",
+    price: "€15",
   },
   {
-    title: "Studenten knippen",
-    description: "Een vriendelijke prijs voor studenten. Laat je studentenkaart zien.",
-    price: "€16,50",
+    title: "Knippen + baard",
+    description: "Het complete pakket: haar en baard in één beurt. Voor een verzorgde, frisse look.",
+    price: "€27",
   },
 ];
 
@@ -92,21 +77,29 @@ function ServicesPage() {
           <div className="mt-12 rounded-2xl bg-bark p-8 text-cream">
             <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <h3 className="text-xl font-bold">Vragen over een dienst?</h3>
-                <p className="mt-1 text-sm text-cream/70">Bel ons gerust. We vertellen je graag meer.</p>
+                <h3 className="text-xl font-bold">Direct een afspraak maken?</h3>
+                <p className="mt-1 text-sm text-cream/70">App ons via WhatsApp of bel ons. We reageren zo snel mogelijk.</p>
               </div>
-              <Button asChild className="rounded-full bg-terracotta text-primary-foreground hover:bg-terracotta-dark">
-                <a href="tel:0624311013">
-                  <Phone className="mr-2 h-4 w-4" />
-                  06 24311013
-                </a>
-              </Button>
+              <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+                <Button asChild className="rounded-full bg-green-500 text-white hover:bg-green-600">
+                  <a href="https://wa.me/31624311013?text=Hallo%2C%20ik%20wil%20graag%20een%20afspraak%20maken%20bij%20Kapsalon%20Andalucia" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="mr-2 h-4 w-4" />
+                    WhatsApp
+                  </a>
+                </Button>
+                <Button asChild className="rounded-full bg-terracotta text-primary-foreground hover:bg-terracotta-dark">
+                  <a href="tel:0624311013">
+                    <Phone className="mr-2 h-4 w-4" />
+                    06 24311013
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
 
           <div className="mt-8 text-center text-sm text-muted-foreground">
             <p>
-              *Prijzen zijn indicatief en kunnen afhankelijk zijn van lengte en hoeveelheid haar.
+              *Prijzen zijn vast. Alleen contante betaling of per pin mogelijk.
             </p>
           </div>
         </div>
@@ -122,6 +115,12 @@ function ServicesPage() {
             Je hoeft geen afspraak te maken. Loop binnen of bel voor de wachttijd.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button asChild size="lg" className="rounded-full bg-green-500 text-white hover:bg-green-600">
+              <a href="https://wa.me/31624311013?text=Hallo%2C%20ik%20wil%20graag%20een%20afspraak%20maken%20bij%20Kapsalon%20Andalucia" target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="mr-2 h-5 w-5" />
+                App voor afspraak
+              </a>
+            </Button>
             <Button asChild size="lg" className="rounded-full bg-terracotta text-primary-foreground hover:bg-terracotta-dark">
               <a href="tel:0624311013">
                 <Phone className="mr-2 h-5 w-5" />

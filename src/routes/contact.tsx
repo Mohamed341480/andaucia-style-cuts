@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Phone, MapPin, Clock, ArrowRight, MessageCircle } from "lucide-react";
 import { Button } from "../components/ui/button";
 
 export const Route = createFileRoute("/contact")({
@@ -60,6 +60,28 @@ function ContactPage() {
                       2526 JG Den Haag
                     </p>
                     <p className="mt-2 text-sm text-muted-foreground">Schilderswijk</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl bg-card p-6 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-500/10 text-green-600">
+                    <MessageCircle className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h2 className="text-xl font-semibold text-foreground">WhatsApp</h2>
+                    <p className="mt-1 text-muted-foreground">
+                      <a
+                        href="https://wa.me/31624311013?text=Hallo%2C%20ik%20wil%20graag%20een%20afspraak%20maken%20bij%20Kapsalon%20Andalucia"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-lg font-semibold text-green-600 hover:text-green-700"
+                      >
+                        Stuur een appje
+                      </a>
+                    </p>
+                    <p className="mt-2 text-sm text-muted-foreground">Maak direct een afspraak via WhatsApp.</p>
                   </div>
                 </div>
               </div>
