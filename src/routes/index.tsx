@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Star, Phone, MapPin, Clock, ArrowRight, Scissors } from "lucide-react";
+import { Star, Phone, MapPin, Clock, ArrowRight, Scissors, MessageCircle } from "lucide-react";
 import { Button } from "../components/ui/button";
 import heroImage from "../assets/hero.jpg";
 
@@ -51,6 +51,12 @@ function HomePage() {
                 Al jaren een vertrouwd adres in de wijk. Twee ervaren barbers, eerlijke prijzen en altijd tijd voor een goed gesprek.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button asChild size="lg" className="rounded-full bg-green-500 text-white hover:bg-green-600">
+                  <a href="https://wa.me/31624311013?text=Hallo%2C%20ik%20wil%20graag%20een%20afspraak%20maken%20bij%20Kapsalon%20Andalucia" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    App voor afspraak
+                  </a>
+                </Button>
                 <Button asChild size="lg" className="rounded-full bg-terracotta text-primary-foreground hover:bg-terracotta-dark">
                   <a href="tel:0624311013">
                     <Phone className="mr-2 h-5 w-5" />
@@ -235,19 +241,19 @@ const servicePreviews = [
   {
     title: "Heren knippen",
     description: "Klassiek of modern model, inclusief wassen en styling.",
-    price: "Vanaf €18,50",
+    price: "€20",
     icon: Scissors,
   },
   {
-    title: "Baard trimmen",
-    description: "Nette contouren, verzorgde baard met aandacht voor detail.",
-    price: "Vanaf €12,50",
-    icon: Scissors,
-  },
-  {
-    title: "Kinderen knippen",
+    title: "Kinderen (tot 12 jaar)",
     description: "Geduld en ervaring voor de kleinste klanten.",
-    price: "Vanaf €15,00",
+    price: "€15",
+    icon: Scissors,
+  },
+  {
+    title: "Knippen + baard",
+    description: "Het complete pakket: haar en baard in één beurt.",
+    price: "€27",
     icon: Scissors,
   },
 ];
