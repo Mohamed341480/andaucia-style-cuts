@@ -297,6 +297,16 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
+      <a
+        href="https://wa.me/31624311013?text=Hallo%2C%20ik%20wil%20graag%20een%20afspraak%20maken%20bij%20Kapsalon%20Andalucia"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 flex items-center justify-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105 hover:bg-green-600"
+        aria-label="Maak een afspraak via WhatsApp"
+      >
+        <MessageCircle className="h-5 w-5" />
+        <span className="hidden sm:inline">Afspraak via WhatsApp</span>
+      </a>
     </QueryClientProvider>
   );
 }
