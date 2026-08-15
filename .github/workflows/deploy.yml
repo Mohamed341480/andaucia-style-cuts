@@ -27,7 +27,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # De regel 'cache: npm' is hier bewust weggehaald om de lock-file error te omzeilen
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps --force
@@ -38,10 +37,22 @@ jobs:
         env:
           CI: false
 
+      - name: Determine Target Folder
+        id: target
+        run: |
+          # Dit controleert of de website in dist of build staat, of direct in de root
+          if [ -d "dist" ]; then
+            echo "folder=./dist" >> $GITHUB_OUTPUT
+          elif [ -d "build" ]; then
+            echo "folder=./build" >> $GITHUB_OUTPUT
+          else
+            echo "folder=." >> $GITHUB_OUTPUT
+          fi
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ${{ steps.target.outputs.folder }}
 
       - name: Deploy to GitHub Pages
         id: deployment
