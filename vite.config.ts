@@ -1,12 +1,14 @@
 import { defineConfig } from "vite";
-// ... eventuele andere imports ...
+import react from "@vitejs/plugin-react";
+import path from "path";
 
+// https://vitejs.dev
 export default defineConfig({
-  base: '/andalucia-style-cuts/', // <-- DEZE REGEL VOEG JE TOE
-  plugins: [
-    // ... 
-  ],
+  base: '/andalucia-style-cuts/', //
+  plugins: [react()],
   resolve: {
-    // ... 
-  }
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
 });
