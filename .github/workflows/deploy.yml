@@ -2,7 +2,7 @@ name: Deploy Vite To GitHub Pages
 
 on:
   push:
-    branches: [ "main", "master" ] # Werkt direct op zowel main als master branches
+    branches: [ "main", "master" ]
 
 permissions:
   contents: read
@@ -27,14 +27,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          # De regel 'cache: npm' is hier bewust weggehaald om de lock-file error te omzeilen
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps --force
 
       - name: Build Website
         run: |
-          # Dit negeert TypeScript errors en dwingt Vite om de site te bouwen
           npm run build -- --skipLibCheck || npx vite build
         env:
           CI: false
