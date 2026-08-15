@@ -28,12 +28,15 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
+- name: Install dependencies
+        run: npm install --legacy-peer-deps --force
 
       - name: Build
-        run: CI=false npm run build
+        run: |
+          export NODE_OPTIONS="--max-old-space-size=4096"
+          npm run build -- --skipLibCheck || npm run build
+        env:
+          CI: false
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
